@@ -2,18 +2,17 @@ import styles from "./Header.module.css";
 export function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.headerInner}>
-        <h1 className={styles.headerLogo}>STORE</h1>
+      <div className={styles.hero}>
         <nav className={styles.headerNav}>
-          <ul className={styles.headernNavList}>
+          <ul className={styles.headerNavList}>
             <li><a href="#menu" className={styles.headerNavLink}>Menu</a></li>
             <li><a href="#about" className={styles.headerNavLink}>About</a></li>
             <li><a href="#location" className={styles.headerNavLink}>Location</a></li>
           </ul>
         </nav>
-      </div>
-      <div className={styles.hero}>
-        <p className={styles.heroTitle}>Store Menu</p>
+        <h1 className={styles.logo}>
+          <img src="/img/logo.svg" alt="COFFEE" className={styles.logoImg} />
+        </h1>
       </div>
     </header>
   );
