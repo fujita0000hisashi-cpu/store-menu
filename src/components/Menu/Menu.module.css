@@ -1,0 +1,75 @@
+.menu {
+  padding: 80px 0;
+}
+
+.menuInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  margin: 0 0 40px 0;
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+
+.menuColumns {
+  display: flex;
+}
+
+.menuCategory {
+  width: 50%;
+  padding: 0 30px;
+}
+
+/* 2カラムの中央線：2つ目だけつける */
+.menuCategory + .menuCategory {
+  border-left: 1px solid #ddd;
+}
+
+.menuHeading {
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+.menuList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuItem {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.itemName {
+  padding-right: 16px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.itemPrice {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .menuColumns {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .menuCategory {
+    width: 100%;
+    padding: 0;
+  }
+
+  .menuCategory + .menuCategory {
+    border-left: none;
+  }
+}
