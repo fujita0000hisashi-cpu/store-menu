@@ -1,18 +1,25 @@
 import styles from "./Menu.module.css"
 
-const DRINKS = [
+type MenuItem = { name: string; price: string };
+
+const DRINKS: MenuItem[] = [
   { name: "Coffee", price: "400"},
   { name: "Cafe Latte", price: "500"},
   { name: "Espresso", price: "300"},
 ];
 
-const FOODS = [
+const FOODS: MenuItem[] = [
   { name: "Sandwich", price: "600"},
   { name: "Salad", price: "500"},
   { name: "Cake", price: "400"},
 ];
 
-function MenuList({ items }: { items: { name: string; price: string; }[] }) {
+const OTHERS: MenuItem[] = [
+  { name: "Cookie", price: "300"},
+  { name: "Chocolate", price: "350"},
+];
+
+function MenuList({ items }: { items: MenuItem[] }) {
   return (
     <ul className={styles.menuList}>
       {items.map((item) => (
@@ -25,20 +32,30 @@ function MenuList({ items }: { items: { name: string; price: string; }[] }) {
   );
 }
 
+function MenuCategory({ title, items, }: { title: string; items: MenuItem[]; }) {
+  return (
+    <section className={styles.menuCategory} aria-label={title}>
+      <h3 className={styles.menuHeading}>{title}</h3>
+      <MenuList items={items} />
+    </section>
+  );
+}
+
 export function Menu() {
   return (
     <section id="menu" className={styles.menu}>
       <div className={styles.menuInner}>
         <h2 className={styles.sectionTitle}>MENU</h2>
         <div className={styles.menuColumns}>
-          <section className={styles.menuCategory}>
-            <h3 className={styles.menuHeading}>Drink</h3>
-            <MenuList items={DRINKS} />
-          </section>
-          <section className={styles.menuCategory}>
-            <h3 className={styles.menuHeading}>Food</h3>
-            <MenuList items={FOODS} />
-          </section>
+
+          {/* Left: Drink */}
+          <MenuCategory title="Drink" items={DRINKS} />
+
+          {/* Right: Food + Other */}
+          <div className={styles.menuRight}>
+            <MenuCategory title="Food" items={FOODS} />
+            <MenuCategory title="Other" items={OTHERS} />
+          </div>
         </div>
       </div>
     </section>

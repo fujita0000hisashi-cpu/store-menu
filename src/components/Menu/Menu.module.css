@@ -9,34 +9,45 @@
 }
 
 .sectionTitle {
-  margin: 0 0 40px 0;
+  margin: 0;
   text-align: center;
   letter-spacing: 0.2em;
 }
 
 .menuColumns {
   display: flex;
+  margin-top: 40px;
 }
 
+/* Left: Drink */
 .menuCategory {
-  width: 50%;
-  padding: 0 30px;
+  width: 100%;
 }
 
-/* 2カラムの中央線：2つ目だけつける */
-.menuCategory + .menuCategory {
+/* Right: Food + Other */
+.menuRight {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
   border-left: 1px solid #ddd;
+  padding-left: 30px;
+  margin-left: 30px;
 }
 
 .menuHeading {
-  margin: 0 0 20px 0;
+  margin: 0;
   text-align: center;
   font-size: 18px;
   letter-spacing: 0.1em;
 }
 
+.menuRight .menuCategory + .menuCategory {
+  margin-top: 40px;
+}
+
 .menuList {
-  margin: 0;
+  margin: 20px 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -46,7 +57,6 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
-  gap: 10px;
 }
 
 .itemName {
@@ -61,15 +71,13 @@
 @media (max-width: 768px) {
   .menuColumns {
     flex-direction: column;
-    gap: 40px;
   }
 
-  .menuCategory {
-    width: 100%;
-    padding: 0;
-  }
-
-  .menuCategory + .menuCategory {
+  .menuRight {
+    margin-top: 40px;
+    margin-left: 0;
+    padding-left: 0;
     border-left: none;
   }
+
 }
