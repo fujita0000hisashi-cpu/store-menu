@@ -1,7 +1,7 @@
 import { Header } from "./components/Header/Header";
 import { Menu } from "./components/Menu/Menu";
 import { About } from "./components/About/About";
-import { Location } from "./components/Location";
+import { Location } from "./components/Location/Location";
 import { Footer } from "./components/Footer";
 
 export default function App() {
