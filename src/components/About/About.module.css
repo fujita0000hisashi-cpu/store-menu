@@ -1,0 +1,64 @@
+.about {
+  padding: 0 0 80px 0;
+}
+
+.aboutHero {
+  height: 300px;
+  background-image: url("img/about.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutInner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px 0 20px;
+}
+
+.aboutHeading {
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 24px;
+  border-bottom: 6px solid #e03131;
+}
+
+.aboutHeadingWrapper {
+  text-align: center;
+}
+
+.sectionTitle {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.2em;
+}
+
+.aboutText {
+  margin: 40px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.aboutText p {
+  margin: 0;
+}
+
+.aboutButton {
+  text-align: center;
+}
+
+.readMore {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .aboutText {
+    grid-template-columns: 1fr;
+  }
+}
