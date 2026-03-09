@@ -1,0 +1,14 @@
+.footer {
+  padding: 20px 0;
+}
+
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footerCopy {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
