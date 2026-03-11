@@ -44,8 +44,10 @@ function MenuCategory({ title, items, }: { title: string; items: MenuItem[]; }) 
 export function Menu() {
   return (
     <section id="menu" className={styles.menu}>
-      <div className={styles.menuInner}>
+      <div className={styles.menuHero}>
         <h2 className={styles.sectionTitle}>MENU</h2>
+      </div>
+      <div className={styles.menuInner}>
         <div className={styles.menuColumns}>
 
           {/* Left: Drink */}
