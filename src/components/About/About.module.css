@@ -54,8 +54,85 @@
 }
 
 .readMore {
+  display: inline-block;
+  position: relative;
+  padding: 14px 36px;
   text-decoration: none;
+  color: #000;
 }
+
+/* 上・右 */
+.readMore::before,
+.readMore::after {
+  content: "";
+  position: absolute;
+  background: #e03131;
+  transition: transform 0.3s ease;
+}
+
+/* 上 */
+.readMore::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* 右 */
+.readMore::after {
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+}
+
+/* 下・左 */
+.readMore span::before,
+.readMore span::after {
+  content: "";
+  position: absolute;
+  background: #e03131;
+  transition: transform 0.3s ease;
+}
+
+/* 下 */
+.readMore span::before {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* 左 */
+.readMore span::after {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+}
+
+/* === hover === */
+
+/* 上　-> 下 */
+.readMore:hover::before {
+  transform: translateY(6px);
+}
+
+/* 右　-> 左 */
+.readMore:hover::after {
+  transform: translateX(-6px);
+}
+
+/* 下　-> 上 */
+.readMore:hover span::before {
+  transform: translateY(-6px);
+}
+
+.readMore:hover span::after {
+  transform: translateX(6px);
+}
+
+/* 左　-> 右 */
 
 @media (max-width: 768px) {
   .aboutText {

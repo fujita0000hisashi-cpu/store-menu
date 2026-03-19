@@ -33,7 +33,7 @@ export function About() {
         </div>
         <div className={styles.aboutButton}>
           <a href="#" className={styles.readMore}>
-            READ MORE
+            <span>READ MORE</span>
           </a>
         </div>
       </div>
